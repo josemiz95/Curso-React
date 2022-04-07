@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+     <!-- Cargar React -->
+     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>React app</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+    // Codigo React
+    const root = document.querySelector('#root');
+    let nombre = 'Goku';
+    const h1 = <h1>Hola {nombre}</h1>;
+
+    ReactDOM.render(h1,root);
+</script>
+
+</html>
