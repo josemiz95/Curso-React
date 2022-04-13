@@ -1,12 +1,15 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-  
-const appContainer = document.getElementById('root');
-const root = createRoot(appContainer);
+// Components
+import PrimeraApp from './components/PrimeraApp';
 
-const html = <h1>Hola Mundo</h1>
+// Stryles
+import './index.css';
+
+const root = createRoot(document.getElementById('root'));
+
 
 root.render(
-  html
+  <PrimeraApp />
 );
