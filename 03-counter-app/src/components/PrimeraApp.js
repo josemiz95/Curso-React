@@ -1,10 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const PrimeraApp = ({ nombre, subtitulo }) => {
-
-   	const saludo = 'Hola mundo';
-    
+const PrimeraApp = ({ nombre, subtitulo }) => {    
     	//Fragment es para evitar poner un div
     	let html = (
 		<>

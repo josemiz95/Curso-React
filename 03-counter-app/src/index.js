@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 // Components
-import PrimeraApp from './components/PrimeraApp';
+import CounterApp from './components/CounterApp';
 
 // Stryles
 import './index.css';
@@ -11,5 +11,5 @@ const root = createRoot(document.getElementById('root'));
 
 
 root.render(
-  <PrimeraApp nombre="Josemi" />
+  <CounterApp numero={0} />
 );
