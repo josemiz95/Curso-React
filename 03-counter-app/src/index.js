@@ -9,7 +9,6 @@ import './index.css';
 
 const root = createRoot(document.getElementById('root'));
 
-
 root.render(
-  <CounterApp numero={0} />
+	<CounterApp numero={0} />
 );
