@@ -11,5 +11,5 @@ const root = createRoot(document.getElementById('root'));
 
 
 root.render(
-  <PrimeraApp />
+  <PrimeraApp nombre="Josemi" />
 );
