@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <PrimeraApp /> con Enzyme Debe mostrar hola Josemi 1`] = `
+<Fragment>
+  <h1>
+    Hola 
+    Josemi
+  </h1>
+  <p>
+    Este es el valor por defecto
+  </p>
+</Fragment>
+`;
