@@ -5,3 +5,27 @@
 body {
   padding: 60px;
 }
+
+input {
+  font-size: 1.3rem;
+  width: 100%;
+  color: gray;
+}
+
+.card-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card{
+  align-content: center;
+  border: 1px solid grey;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 10px 10px 0;
+}
+
+.card img {
+  max-height: 170px;
+}
