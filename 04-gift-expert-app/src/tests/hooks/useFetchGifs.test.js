@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react";
+import { renderHook, waitFor } from "@testing-library/react";
 import { useFetchGifs } from "../../hooks/useFetchGifs";
 
 describe('Pruebas en hook', () => { 
@@ -11,14 +11,15 @@ describe('Pruebas en hook', () => {
     }); 
 
     test('debe retornar un array de imagenes y loafing en false', async() => { 
-        // Con react 18 no existe waitForNextUpdate
-        
-        // const { result, waitForNextUpdate } = renderHook( () => useFetchGifs( 'One Punch' ) );
-        // await waitForNextUpdate();
+        const {result} = renderHook(()=> useFetchGifs( 'One punch' ) );
 
-        // const { data, loading } = result.current;
+        await waitFor(() => {
+            expect(result.current[1]).toBe(false)
+        }, {timeout: 10000});
 
-        // expect( data.length ).toBe( 10 );
-        // expect( loading ).toBe( false );
+        const [data, loading] = result.current;
+
+        expect( data.length ).toBe( 10 );
+        expect( loading ).toBe( false );
     });
 })
