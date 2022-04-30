@@ -13,9 +13,7 @@ describe('Pruebas en hook', () => {
     test('debe retornar un array de imagenes y loafing en false', async() => { 
         const {result} = renderHook(()=> useFetchGifs( 'One punch' ) );
 
-        await waitFor(() => {
-            expect(result.current[1]).toBe(false)
-        }, {timeout: 10000});
+        await waitFor(() => expect(result.current[1]).toBe(false), {timeout: 10000});
 
         const [data, loading] = result.current;
 
