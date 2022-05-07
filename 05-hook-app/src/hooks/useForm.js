@@ -10,10 +10,10 @@ export const useForm = (initialState = {}) => {
         });
     }
 
-    const handelSubmit = (e) => {
-        e.preventDefault();
+    const reset = () => {
+        setValues(initialState);
     }
 
-    return [values, handleInputChange, handelSubmit];
+    return [values, handleInputChange, reset];
 
 }
