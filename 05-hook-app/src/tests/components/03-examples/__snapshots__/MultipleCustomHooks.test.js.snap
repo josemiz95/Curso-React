@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on <MultipleCustomHooks /> should be shown correctly 1`] = `
+<div>
+  <h1>
+    BreakingBad Quotes
+  </h1>
+  <hr />
+  <div
+    className="alert alert-info text-center"
+  >
+    Loading ...
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Anterior
+  </button>
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+  >
+    Siguiente
+  </button>
+</div>
+`;
+
+exports[`Test on <MultipleCustomHooks /> should to show the info 1`] = `
+<div>
+  <h1>
+    BreakingBad Quotes
+  </h1>
+  <hr />
+  <blockquote
+    className="blockquote text-end"
+  >
+    <p
+      className="quote"
+    >
+      Hola Mundo
+    </p>
+    <footer
+      className="blockquote-footer"
+    >
+       
+      Josemi
+       
+    </footer>
+  </blockquote>
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Anterior
+  </button>
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+  >
+    Siguiente
+  </button>
+</div>
+`;

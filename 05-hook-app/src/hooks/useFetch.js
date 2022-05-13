@@ -20,6 +20,13 @@ export const useFetch = (url) => {
                         error: null
                     });
                 }
+            })
+            .catch((error)=>{
+                setState({
+                    data:null,
+                    loading:false,
+                    error: 'Error'
+                })
             });
     }, [url]);
 
