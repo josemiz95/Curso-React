@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test on <HomeScreen /> should show the component 1`] = `
+<div>
+  <h1>
+    Home Screen
+  </h1>
+  <hr />
+  <pre />
+</div>
+`;

@@ -6,7 +6,6 @@ describe('Test for <TodoItem/>', () => {
 	const todo = demoTodos[0];
 	const handleDelete = jest.fn();
 	const handleToggle = jest.fn();
-
 	const wrapper = shallow(<TodoItem todo={todo} handleDelete={handleDelete} handleToggle={handleToggle} />);
 
 	test('should show correctly', () => {
@@ -26,5 +25,11 @@ describe('Test for <TodoItem/>', () => {
 	test('text should be show correctly', () => {
 		const text = wrapper.find('p').text();
 		expect(text).toBe(todo.desc);
+	});
+
+	test('should have the correct class when done', () => {
+		todo.done = true;
+		const wrapper = shallow(<TodoItem todo={todo}/>);
+		expect(wrapper.find('p').hasClass('complete')).toBeTruthy();
 	});
 });
