@@ -1,9 +1,6 @@
 import React from 'react'
 
 export const TodoItem = ({todo, handleDelete, handleToggle}) => {
-    
-    
-
     return (
         <li className="list-group-item">
             <p className={`${todo.done && 'complete'}`} onClick={() => {handleToggle(todo.id)}}>{todo.desc}</p>
