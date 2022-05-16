@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Navbar } from '../ui/components/Navbar';
 import { MarvelScreen } from '../views/MarvelScreen';
 import { SearchScreen } from '../views/SearchScreen';
@@ -9,13 +9,16 @@ export const DashboardRoutes = () => {
 	return (
 		<>
 			<Navbar />
-			<Routes>
-				<Route path="/" element={<MarvelScreen />} />
-				<Route path="/marvel" element={<MarvelScreen />} />
-				<Route path="/dc" element={<DcScreen />} />
-				<Route path="/heroe" element={<HeroeScreen />} />
-				<Route path="/search" element={<SearchScreen />} />
-			</Routes>
+			<div className="container">
+				<Routes>
+					<Route path="/marvel" element={<MarvelScreen />} />
+					<Route path="/dc" element={<DcScreen />} />
+					<Route path="/heroe" element={<HeroeScreen />} />
+					<Route path="/search" element={<SearchScreen />} />
+					
+					<Route path="/*" element={<Navigate to="/marvel" />} />
+				</Routes>
+			</div>
 		</>
 	)
 }

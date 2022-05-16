@@ -1,12 +1,10 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
-    const handleLogout = () => {
-        // TODO: Logout
-        console.log('Logout');
-    }
+	const navigate = useNavigate();
+    const handleLogout = () => navigate('/login', { replace: true });
 
-    const activeClass = ({isActive}) =>  "nav-item nav-link " + (isActive?'active':'');
+    const navItemClass = ({isActive}) =>  "nav-item nav-link " + (isActive?'active':'');
 
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -17,11 +15,11 @@ export const Navbar = () => {
 
             <div className="navbar-collapse">
                 <div className="navbar-nav">
-                    <NavLink className={activeClass} to="/marvel">
+                    <NavLink className={navItemClass} to="/marvel">
                         Marvel
                     </NavLink>
 
-                    <NavLink className={activeClass} to="/dc">
+                    <NavLink className={navItemClass} to="/dc">
                         DC
                     </NavLink>
                 </div>
