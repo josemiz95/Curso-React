@@ -1,6 +1,6 @@
 import { heroes } from "../data/heroes";
 
-const getHeroesById = (id) => heroes.find(hero => hero.id === id);
+const getHeroeById = (id) => heroes.find(hero => hero.id === id);
 
 const getHeroesByPublisher = (publisher) => {
 	const validPublishers = ['DC Comics', 'Marvel Comics'];
@@ -13,6 +13,6 @@ const getHeroesByPublisher = (publisher) => {
 }
 
 export { 
-	getHeroesById, 
+	getHeroeById, 
 	getHeroesByPublisher 
 };

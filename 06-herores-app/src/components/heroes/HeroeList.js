@@ -1,19 +1,14 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { getHeroesByPublisher } from "../../helpers/getHeroes"
+import { HeroeCard } from "./HeroeCard";
 
 export const HeroeList = ({publisher=''}) => {
 	const heroes = getHeroesByPublisher(publisher);
   return (
-	<>
-		<ul>
-			{heroes.map(hero => (
-				<li key={hero.id}>
-					<Link to={`/heroe/${hero.id}`}>
-						{hero.superhero}
-					</Link>
-				</li>
-			))}
-		</ul>
-	</>
+	<div className="row">
+		{heroes.map(hero => (
+			<HeroeCard key={hero.id} {...hero}/>
+		))}
+	</div>
   )
 }
