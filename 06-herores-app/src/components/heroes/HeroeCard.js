@@ -6,7 +6,7 @@ export const HeroeCard = ({id, superhero, publisher, alter_ego, first_appearance
 	const imagePath = `/assets/heroes/${id}.jpg`;
 
   return (
-	<div className='col col-12 col-md-4 col-lg-3 p-2'>
+	<div className='col-12 col-md-6'>
 		<div className='card'>
 			<div className='row no-gutters'>
 				<div className='col-md-4'>

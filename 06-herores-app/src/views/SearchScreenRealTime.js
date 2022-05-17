@@ -1,24 +1,32 @@
-import React, { useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import { HeroeCard } from '../components/heroes/HeroeCard';
 import { getHeroesByName } from '../helpers/getHeroes';
 import { useForm } from '../hooks/useForm'
 
-export const SearchScreen = () => {
+export const SearchScreenRealTime = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
-	const {q = ''} = queryString.parse(location.search); 
+	const {q = ''} = queryString.parse(location.search);
 
 	const [{searchText}, handleInputChange,] = useForm({searchText:q});
 
-	const heroes = useMemo(() => getHeroesByName(q),[q]);
+	const heroes = getHeroesByName(searchText);
 
 	const handleSearch = (e) => {
 		e.preventDefault();
-		// setHeroes(getHeroesByName(searchText));
 		navigate(`?q=${searchText}`);
 	}
+
+	// Test
+	useEffect(() => {
+		if (window.history.replaceState) {
+			const url = window.location.protocol+"//"+window.location.host+window.location.pathname;
+			const query ="?q="+ searchText;
+			window.history.replaceState({}, "", url+query);
+		}
+	}, [searchText])
 
 	return (
 		<>

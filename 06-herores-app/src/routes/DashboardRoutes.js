@@ -4,6 +4,7 @@ import { MarvelScreen } from '../views/MarvelScreen';
 import { SearchScreen } from '../views/SearchScreen';
 import { DcScreen } from '../views/DcScreen';
 import { HeroeScreen } from '../views/HeroeScreen';
+import { SearchScreenRealTime } from '../views/SearchScreenRealTime';
 
 export const DashboardRoutes = () => {
 	return (
@@ -15,6 +16,7 @@ export const DashboardRoutes = () => {
 					<Route path="/dc" element={<DcScreen />} />
 					<Route path="/hero/:id" element={<HeroeScreen />} />
 					<Route path="/search" element={<SearchScreen />} />
+					<Route path="/realtime/search" element={<SearchScreenRealTime />} />
 					
 					<Route path="/*" element={<Navigate to="/marvel" />} />
 				</Routes>
