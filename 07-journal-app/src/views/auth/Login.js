@@ -22,7 +22,7 @@ export const Login = () => {
 						</p>
 					</div>
 				</div>
-				<Link to='/register'>Register</Link>
+				<Link to='/auth/register' className="link">Register</Link>
 			</form>
 		</>
 	)

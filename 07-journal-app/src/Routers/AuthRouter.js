@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Login } from '../views/auth/Login';
 import { Register } from '../views/auth/Register';
 
@@ -7,12 +8,12 @@ export const AuthRouter = () => {
   return (
 	<div className='auth__main'>
 		<div className='auth__box-container'>
-			<Switch>
-				<Route exact path="/auth/login" component={Login} />
-				<Route exact path="/auth/register" component={Register} />
+			<Routes>
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
 
-				<Redirect to="/auth/login" />
-			</Switch>
+				<Route path="/*" element={<Navigate to="/auth/login" />} />
+			</Routes>
 		</div>
 	</div>
   )

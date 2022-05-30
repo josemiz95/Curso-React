@@ -1,24 +1,20 @@
 import React from 'react';
-import { 
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Redirect
-} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Journal } from '../views/journal/Journal';
 import { AuthRouter } from './AuthRouter';
 
 export const AppRouter = () => {
   return (
-	<Router>
+	<BrowserRouter>
 	  	<div>
-			<Switch>
-				<Route path="/auth" component={AuthRouter} />
-				<Route exact path="/" component={Journal} />\
+			<Routes>
+				<Route path="/auth/*" element={<AuthRouter />} />
+				<Route path="/" element={<Journal />} />
 
-				<Redirect to="/auth/login" />
-			</Switch>
+				<Route path="/*" element={<Navigate to="/auth/login" />} />
+			</Routes>
 		</div>
-	</Router>
+	</BrowserRouter>
   )
 }
